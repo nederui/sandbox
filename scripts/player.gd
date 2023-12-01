@@ -5,10 +5,11 @@ const JUMP_VELOCITY = 4.5
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var neck := $neck
-@onready var camera := $neck/Camera3D
 @export var mouse_sensitivity: float = 0.01
 @export var controller_sensitivity: float = 0.01
+
+@onready var neck := $neck
+@onready var camera := $neck/Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -29,6 +30,9 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+
+	if Input.is_action_just_pressed("flashlight"):
+		%SpotLight3D.visible = !%SpotLight3D.visible
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

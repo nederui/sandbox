@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pv4s0"]
 
 [node name="player" type="CharacterBody3D"]
+collision_layer = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_xmauu")
