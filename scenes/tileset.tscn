@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cekis7g4smxap"]
-
-[ext_resource type="PackedScene" uid="uid://l2daai5bpdho" path="res://tileset/tileset.glb" id="1_ta4rm"]
-
-[node name="tileset" instance=ExtResource("1_ta4rm")]
